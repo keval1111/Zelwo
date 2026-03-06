@@ -1,0 +1,60 @@
+body {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  line-height: 1.5;
+  color: #333;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Navigation Arrows - Specific sizing and centering */
+.swiper-button-next:after,
+.swiper-button-prev:after {
+  font-weight: bold;
+}
+
+ .categorySwiper .swiper-slide {
+    width: 33.333% !important;
+  }
+
+    /* Show modal when checkbox is checked */
+    .video-checkbox:checked ~ .video-modal {
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    /* Scale up the video content when modal opens */
+    .video-checkbox:checked ~ .video-modal .relative {
+        transform: scale(1);
+    }
+
+    /* Prevent scrolling when modal is open (Optional but recommended) */
+    body:has(.video-checkbox:checked) {
+        overflow: hidden;
+    }
+
+
+/* 3. The "Pop-up" Trigger Logic */
+.hidden-trigger:checked ~ .video-modal {
+  opacity: 1;
+  pointer-events: auto;
+} 
+
+.reelSwiper .swiper-wrapper {
+  transition-timing-function: linear;
+}   
+
+
+  @media (max-width: 1024px) {
+    .categorySwiper .swiper-slide {
+      width: 50% !important;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .categorySwiper .swiper-slide {
+      width: 100% !important;
+    }
+  }
+
+
