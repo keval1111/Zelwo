@@ -730,4 +730,3 @@ tailwind.config = {
         }
     }
 }
-
