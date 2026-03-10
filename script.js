@@ -730,3 +730,109 @@ tailwind.config = {
         }
     }
 }
+
+    document.addEventListener('DOMContentLoaded', function () {
+        const product = {
+            id: 'prod-drop-gold-earrings',
+            name: 'Drop gold earrings',
+            image: 'https://jelwo.myshopify.com/cdn/shop/files/jewelry-product-7.jpg?v=1742442751&width=1920',
+            variants: {
+                brown: { label: 'Brown', price: 'Rs. 14.00' },
+                gold: { label: 'Gold', price: 'Rs. 15.00' },
+                orange: { label: 'Orange', price: 'Rs. 16.00' }
+            }
+        };
+
+        const qtyInput = document.getElementById('qty');
+        const stickyQtyInput = document.getElementById('stickyQty');
+        const colorLabel = document.getElementById('selectedColorLabel');
+        const priceLabel = document.getElementById('productPrice');
+        const stickyVariantPrice = document.getElementById('stickyVariantPrice');
+        const stickySelect = document.getElementById('stickyVariantSelect');
+        const variantButtons = document.querySelectorAll('.variant-btn');
+        let activeVariant = 'orange';
+
+        function normalizeQty(value) {
+            const parsed = parseInt(value, 10);
+            return Number.isNaN(parsed) || parsed < 1 ? 1 : parsed;
+        }
+
+        function setQty(value) {
+            const qty = normalizeQty(value);
+            qtyInput.value = qty;
+            stickyQtyInput.value = qty;
+        }
+
+        function updateVariant(variantKey) {
+            const variant = product.variants[variantKey];
+            if (!variant) return;
+
+            activeVariant = variantKey;
+            colorLabel.textContent = variant.label;
+            priceLabel.textContent = variant.price;
+            stickyVariantPrice.textContent = variant.label + ' - ' + variant.price;
+            stickySelect.value = variantKey;
+
+            variantButtons.forEach((button) => {
+                const active = button.dataset.variant === variantKey;
+                button.classList.toggle('border-gray-900', active);
+                button.classList.toggle('text-gray-900', active);
+                button.classList.toggle('border-gray-300', !active);
+                button.classList.toggle('text-gray-500', !active);
+            });
+        }
+
+        function cartPayload() {
+            return {
+                id: product.id + '-' + activeVariant,
+                name: product.name + ' - ' + product.variants[activeVariant].label,
+                price: product.variants[activeVariant].price,
+                image: product.image
+            };
+        }
+
+        document.querySelector('[data-qty-dec]').addEventListener('click', function () {
+            setQty(normalizeQty(qtyInput.value) - 1);
+        });
+        document.querySelector('[data-qty-inc]').addEventListener('click', function () {
+            setQty(normalizeQty(qtyInput.value) + 1);
+        });
+        document.querySelector('[data-sticky-dec]').addEventListener('click', function () {
+            setQty(normalizeQty(stickyQtyInput.value) - 1);
+        });
+        document.querySelector('[data-sticky-inc]').addEventListener('click', function () {
+            setQty(normalizeQty(stickyQtyInput.value) + 1);
+        });
+
+        qtyInput.addEventListener('input', function () {
+            setQty(this.value);
+        });
+        stickyQtyInput.addEventListener('input', function () {
+            setQty(this.value);
+        });
+
+        variantButtons.forEach((button) => {
+            button.addEventListener('click', function () {
+                updateVariant(this.dataset.variant);
+            });
+        });
+
+        stickySelect.addEventListener('change', function () {
+            updateVariant(this.value);
+        });
+
+        document.getElementById('buyBtnMain').addEventListener('click', function () {
+            window.addToCart(cartPayload(), normalizeQty(qtyInput.value));
+        });
+
+        document.getElementById('stickyAddToCart').addEventListener('click', function () {
+            window.addToCart(cartPayload(), normalizeQty(stickyQtyInput.value));
+        });
+
+        document.getElementById('wishlistBtn').addEventListener('click', function () {
+            window.addToWishlist(cartPayload());
+        });
+
+        setQty(1);
+        updateVariant(activeVariant);
+    });
