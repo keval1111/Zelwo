@@ -872,9 +872,9 @@
 
             <div class="swiper myJewelrySwiper mb-12">
                 <div class="swiper-wrapper">
-
                     <div
-                        class="swiper-slide group relative border border-gray-100 bg-white text-center transition-all hover:shadow-lg h-auto">
+                        onclick="window.location.href='Product.html'"
+                        class="swiper-slide group relative cursor-pointer border border-gray-100 bg-white text-center transition-all hover:shadow-lg h-auto">
                         <div class="relative aspect-square overflow-hidden bg-[#f9f9f9] p-8">
                             <span
                                 class="absolute left-2 top-2 z-20 bg-[#48bb78] px-2 py-1 text-xs text-white">25%</span>
@@ -884,17 +884,14 @@
                             <div
                                 class="absolute inset-0 z-10 flex items-center justify-center gap-3 bg-[#bb9d89] opacity-0 transition-opacity duration-300 group-hover:opacity-90">
                                 <button
-                                    onclick="addToWishlist({id: 'prod-1', name: 'Simple Pearl earrings', price: 'Rs. 15.00', image: 'https://jelwo.myshopify.com/cdn/shop/files/jewelry-product-6.jpg?v=1742442751&width=1920'})"
-                                    class="flex h-10 w-10 items-center justify-center rounded-full border border-white text-white hover:bg-white hover:text-[#bb9d89] transition-colors">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    onclick="event.stopPropagation(); addToWishlist({id: 'prod-1', name: 'Simple Pearl earrings', price: 'Rs. 15.00', image: 'https://jelwo.myshopify.com/cdn/shop/files/jewelry-product-6.jpg?v=1742442751&width=1920'})" class="flex h-10 w-10 items-center justify-center rounded-full border border-white text-white hover:bg-white hover:text-[#bb9d89] transition-colors"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                         stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
                                         <path stroke-linecap="round" stroke-linejoin="round"
                                             d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
                                     </svg>
                                 </button>
                                 <button
-                                    class="flex h-10 w-10 items-center justify-center rounded-full border border-white text-white hover:bg-white hover:text-[#bb9d89] transition-colors">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    onclick="event.stopPropagation(); window.location.href='Product.html'" class="flex h-10 w-10 items-center justify-center rounded-full border border-white text-white hover:bg-white hover:text-[#bb9d89] transition-colors"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                         stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
                                         <path stroke-linecap="round" stroke-linejoin="round"
                                             d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178Z" />
@@ -938,17 +935,16 @@
                             <div
                                 class="absolute inset-0 flex flex-col items-center justify-center gap-3 translate-y-full opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100 px-4">
                                 <div class="flex gap-2">
-                                    <select class="border border-gray-200 text-xs p-1 outline-none text-gray-500">
+                                    <select onclick="event.stopPropagation()" class="border border-gray-200 text-xs p-1 outline-none text-gray-500">
                                         <option>Gold</option>
                                     </select>
                                     <div class="flex border border-gray-200 items-center text-xs">
-                                        <button class="px-2 text-gray-400">-</button><span
-                                            class="px-2 border-x border-gray-100">1</span><button
-                                            class="px-2 text-gray-400">+</button>
+                                        <button onclick="event.stopPropagation()" class="px-2 text-gray-400">-</button><span
+                                            class="px-2 border-x border-gray-100">1</span><button onclick="event.stopPropagation()" class="px-2 text-gray-400">+</button>
                                     </div>
                                 </div>
                                 <button
-                                    onclick="addToCart({id: 'prod-1', name: 'Simple Pearl earrings', price: 'Rs. 15.00', image: 'https://jelwo.myshopify.com/cdn/shop/files/jewelry-product-6.jpg?v=1742442751&width=1920'})"
+                                    onclick="event.stopPropagation(); addToCart({id: 'prod-1', name: 'Simple Pearl earrings', price: 'Rs. 15.00', image: 'https://jelwo.myshopify.com/cdn/shop/files/jewelry-product-6.jpg?v=1742442751&width=1920'})"
                                     class="border-b border-[#bb9d89] text-[#bb9d89] font-bold text-xs uppercase tracking-[0.2em] pb-1 hover:text-black hover:border-black transition-colors">Add
                                     to Cart</button>
                             </div>
@@ -956,7 +952,8 @@
                     </div>
 
                     <div
-                        class="swiper-slide group relative border border-gray-100 bg-white text-center transition-all hover:shadow-lg h-auto">
+                        onclick="window.location.href='Product.html'"
+                        class="swiper-slide group relative cursor-pointer border border-gray-100 bg-white text-center transition-all hover:shadow-lg h-auto">
                         <div class="relative aspect-square overflow-hidden bg-[#f9f9f9] p-8">
                             <span
                                 class="absolute left-2 top-2 z-20 bg-[#48bb78] px-2 py-1 text-xs text-white">45%</span>
@@ -965,15 +962,14 @@
                             <div
                                 class="absolute inset-0 z-10 flex items-center justify-center gap-3 bg-[#bb9d89] opacity-0 transition-opacity duration-300 group-hover:opacity-90">
                                 <button
-                                    onclick="addToWishlist({id: 'prod-2', name: 'Chic diamond ring', price: 'From Rs. 22.00', image: 'https://jelwo.myshopify.com/cdn/shop/files/jewelry-product-9.jpg?v=1742442751&width=1920'})"
-                                    class="flex h-10 w-10 items-center justify-center rounded-full border border-white text-white hover:bg-white hover:text-[#bb9d89] transition-colors"><svg
+                                    onclick="event.stopPropagation(); addToWishlist({id: 'prod-2', name: 'Chic diamond ring', price: 'From Rs. 22.00', image: 'https://jelwo.myshopify.com/cdn/shop/files/jewelry-product-9.jpg?v=1742442751&width=1920'})" class="flex h-10 w-10 items-center justify-center rounded-full border border-white text-white hover:bg-white hover:text-[#bb9d89] transition-colors"><svg
                                         xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                         stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
                                         <path stroke-linecap="round" stroke-linejoin="round"
                                             d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
                                     </svg></button>
                                 <button
-                                    class="flex h-10 w-10 items-center justify-center rounded-full border border-white text-white hover:bg-white hover:text-[#bb9d89] transition-colors"><svg
+                                    onclick="event.stopPropagation(); window.location.href='Product.html'" class="flex h-10 w-10 items-center justify-center rounded-full border border-white text-white hover:bg-white hover:text-[#bb9d89] transition-colors"><svg
                                         xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                         stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
                                         <path stroke-linecap="round" stroke-linejoin="round"
@@ -996,17 +992,16 @@
                             <!-- Hover Box -->
                             <div
                                 class="absolute inset-0 flex flex-col items-center justify-center gap-3 translate-y-full opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100 px-4">
-                                <div class="flex gap-2"><select
+                                <div class="flex gap-2"><select onclick="event.stopPropagation()"
                                         class="border border-gray-200 text-xs p-1 outline-none text-gray-500">
                                         <option>Gold</option>
                                     </select>
-                                    <div class="flex border border-gray-200 items-center text-xs"><button
+                                    <div class="flex border border-gray-200 items-center text-xs"><button onclick="event.stopPropagation()"
                                             class="px-2 text-gray-400">-</button><span
-                                            class="px-2 border-x border-gray-100">1</span><button
-                                            class="px-2 text-gray-400">+</button></div>
+                                            class="px-2 border-x border-gray-100">1</span><button onclick="event.stopPropagation()" class="px-2 text-gray-400">+</button></div>
                                 </div>
                                 <button
-                                    onclick="addToCart({id: 'prod-2', name: 'Chic diamond ring', price: 'From Rs. 22.00', image: 'https://jelwo.myshopify.com/cdn/shop/files/jewelry-product-9.jpg?v=1742442751&width=1920'})"
+                                    onclick="event.stopPropagation(); addToCart({id: 'prod-2', name: 'Chic diamond ring', price: 'From Rs. 22.00', image: 'https://jelwo.myshopify.com/cdn/shop/files/jewelry-product-9.jpg?v=1742442751&width=1920'})"
                                     class="border-b border-[#bb9d89] text-[#bb9d89] font-bold text-xs uppercase tracking-[0.2em] pb-1 hover:text-black hover:border-black transition-colors">Add
                                     to Cart</button>
                             </div>
@@ -1014,7 +1009,8 @@
                     </div>
 
                     <div
-                        class="swiper-slide group relative border border-gray-100 bg-white text-center transition-all hover:shadow-lg h-auto">
+                        onclick="window.location.href='Product.html'"
+                        class="swiper-slide group relative cursor-pointer border border-gray-100 bg-white text-center transition-all hover:shadow-lg h-auto">
                         <div class="relative aspect-square overflow-hidden bg-[#f9f9f9] p-8">
                             <span
                                 class="absolute left-2 top-2 z-20 bg-[#48bb78] px-2 py-1 text-xs text-white">64%</span>
@@ -1023,15 +1019,14 @@
                             <div
                                 class="absolute inset-0 z-10 flex items-center justify-center gap-3 bg-[#bb9d89] opacity-0 transition-opacity duration-300 group-hover:opacity-90">
                                 <button
-                                    onclick="addToWishlist({id: 'prod-3', name: 'Gemstone jhumkas', price: 'Rs. 18.00', image: 'https://jelwo.myshopify.com/cdn/shop/files/jewelry-product-8.jpg?v=1742442751&width=1920'})"
-                                    class="flex h-10 w-10 items-center justify-center rounded-full border border-white text-white hover:bg-white hover:text-[#bb9d89] transition-colors"><svg
+                                    onclick="event.stopPropagation(); addToWishlist({id: 'prod-3', name: 'Gemstone jhumkas', price: 'Rs. 18.00', image: 'https://jelwo.myshopify.com/cdn/shop/files/jewelry-product-8.jpg?v=1742442751&width=1920'})" class="flex h-10 w-10 items-center justify-center rounded-full border border-white text-white hover:bg-white hover:text-[#bb9d89] transition-colors"><svg
                                         xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                         stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
                                         <path stroke-linecap="round" stroke-linejoin="round"
                                             d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
                                     </svg></button>
                                 <button
-                                    class="flex h-10 w-10 items-center justify-center rounded-full border border-white text-white hover:bg-white hover:text-[#bb9d89] transition-colors"><svg
+                                    onclick="event.stopPropagation(); window.location.href='Product.html'" class="flex h-10 w-10 items-center justify-center rounded-full border border-white text-white hover:bg-white hover:text-[#bb9d89] transition-colors"><svg
                                         xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                         stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
                                         <path stroke-linecap="round" stroke-linejoin="round"
@@ -1073,17 +1068,16 @@
                             <!-- Hover Box -->
                             <div
                                 class="absolute inset-0 flex flex-col items-center justify-center gap-3 translate-y-full opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100 px-4">
-                                <div class="flex gap-2"><select
+                                <div class="flex gap-2"><select onclick="event.stopPropagation()"
                                         class="border border-gray-200 text-xs p-1 outline-none text-gray-500">
                                         <option>Gold</option>
                                     </select>
-                                    <div class="flex border border-gray-200 items-center text-xs"><button
+                                    <div class="flex border border-gray-200 items-center text-xs"><button onclick="event.stopPropagation()"
                                             class="px-2 text-gray-400">-</button><span
-                                            class="px-2 border-x border-gray-100">1</span><button
-                                            class="px-2 text-gray-400">+</button></div>
+                                            class="px-2 border-x border-gray-100">1</span><button onclick="event.stopPropagation()" class="px-2 text-gray-400">+</button></div>
                                 </div>
                                 <button
-                                    onclick="addToCart({id: 'prod-3', name: 'Gemstone jhumkas', price: 'Rs. 18.00', image: 'https://jelwo.myshopify.com/cdn/shop/files/jewelry-product-8.jpg?v=1742442751&width=1920'})"
+                                    onclick="event.stopPropagation(); addToCart({id: 'prod-3', name: 'Gemstone jhumkas', price: 'Rs. 18.00', image: 'https://jelwo.myshopify.com/cdn/shop/files/jewelry-product-8.jpg?v=1742442751&width=1920'})"
                                     class="border-b border-[#bb9d89] text-[#bb9d89] font-bold text-xs uppercase tracking-[0.2em] pb-1 hover:text-black hover:border-black transition-colors">Add
                                     to Cart</button>
                             </div>
@@ -1091,7 +1085,8 @@
                     </div>
 
                     <div
-                        class="swiper-slide group relative border border-gray-100 bg-white text-center transition-all hover:shadow-lg h-auto">
+                        onclick="window.location.href='Product.html'"
+                        class="swiper-slide group relative cursor-pointer border border-gray-100 bg-white text-center transition-all hover:shadow-lg h-auto">
                         <div class="relative aspect-square overflow-hidden bg-[#f9f9f9] p-8">
                             <span
                                 class="absolute left-2 top-2 z-20 bg-[#48bb78] px-2 py-1 text-xs text-white">68%</span>
@@ -1100,15 +1095,14 @@
                             <div
                                 class="absolute inset-0 z-10 flex items-center justify-center gap-3 bg-[#bb9d89] opacity-0 transition-opacity duration-300 group-hover:opacity-90">
                                 <button
-                                    onclick="addToWishlist({id: 'prod-4', name: 'Drop gold earrings', price: 'From Rs. 14.00', image: 'https://jelwo.myshopify.com/cdn/shop/files/jewelry-product-7.jpg?v=1742442751&width=1920'})"
-                                    class="flex h-10 w-10 items-center justify-center rounded-full border border-white text-white hover:bg-white hover:text-[#bb9d89] transition-colors"><svg
+                                    onclick="event.stopPropagation(); addToWishlist({id: 'prod-4', name: 'Drop gold earrings', price: 'From Rs. 14.00', image: 'https://jelwo.myshopify.com/cdn/shop/files/jewelry-product-7.jpg?v=1742442751&width=1920'})" class="flex h-10 w-10 items-center justify-center rounded-full border border-white text-white hover:bg-white hover:text-[#bb9d89] transition-colors"><svg
                                         xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                         stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
                                         <path stroke-linecap="round" stroke-linejoin="round"
                                             d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
                                     </svg></button>
                                 <button
-                                    class="flex h-10 w-10 items-center justify-center rounded-full border border-white text-white hover:bg-white hover:text-[#bb9d89] transition-colors"><svg
+                                    onclick="event.stopPropagation(); window.location.href='Product.html'" class="flex h-10 w-10 items-center justify-center rounded-full border border-white text-white hover:bg-white hover:text-[#bb9d89] transition-colors"><svg
                                         xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                         stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
                                         <path stroke-linecap="round" stroke-linejoin="round"
@@ -1131,17 +1125,16 @@
                             <!-- Hover Box -->
                             <div
                                 class="absolute inset-0 flex flex-col items-center justify-center gap-3 translate-y-full opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100 px-4">
-                                <div class="flex gap-2"><select
+                                <div class="flex gap-2"><select onclick="event.stopPropagation()"
                                         class="border border-gray-200 text-xs p-1 outline-none text-gray-500">
                                         <option>Gold</option>
                                     </select>
-                                    <div class="flex border border-gray-200 items-center text-xs"><button
+                                    <div class="flex border border-gray-200 items-center text-xs"><button onclick="event.stopPropagation()"
                                             class="px-2 text-gray-400">-</button><span
-                                            class="px-2 border-x border-gray-100">1</span><button
-                                            class="px-2 text-gray-400">+</button></div>
+                                            class="px-2 border-x border-gray-100">1</span><button onclick="event.stopPropagation()" class="px-2 text-gray-400">+</button></div>
                                 </div>
                                 <button
-                                    onclick="addToCart({id: 'prod-4', name: 'Drop gold earrings', price: 'From Rs. 14.00', image: 'https://jelwo.myshopify.com/cdn/shop/files/jewelry-product-7.jpg?v=1742442751&width=1920'})"
+                                    onclick="event.stopPropagation(); addToCart({id: 'prod-4', name: 'Drop gold earrings', price: 'From Rs. 14.00', image: 'https://jelwo.myshopify.com/cdn/shop/files/jewelry-product-7.jpg?v=1742442751&width=1920'})"
                                     class="border-b border-[#bb9d89] text-[#bb9d89] font-bold text-xs uppercase tracking-[0.2em] pb-1 hover:text-black hover:border-black transition-colors">Add
                                     to Cart</button>
                             </div>
@@ -1149,7 +1142,8 @@
                     </div>
 
                     <div
-                        class="swiper-slide group relative border border-gray-100 bg-white text-center transition-all hover:shadow-lg h-auto">
+                        onclick="window.location.href='Product.html'"
+                        class="swiper-slide group relative cursor-pointer border border-gray-100 bg-white text-center transition-all hover:shadow-lg h-auto">
                         <div class="relative aspect-square overflow-hidden bg-[#f9f9f9] p-8">
                             <span
                                 class="absolute left-2 top-2 z-20 bg-[#48bb78] px-2 py-1 text-xs text-white">68%</span>
@@ -1158,15 +1152,14 @@
                             <div
                                 class="absolute inset-0 z-10 flex items-center justify-center gap-3 bg-[#bb9d89] opacity-0 transition-opacity duration-300 group-hover:opacity-90">
                                 <button
-                                    onclick="addToWishlist({id: 'prod-5', name: 'Gold ring', price: 'From Rs. 14.00', image: 'https://jelwo.myshopify.com/cdn/shop/files/jewelry-product-26.jpg?v=1742444221&width=352'})"
-                                    class="flex h-10 w-10 items-center justify-center rounded-full border border-white text-white hover:bg-white hover:text-[#bb9d89] transition-colors"><svg
+                                    onclick="event.stopPropagation(); addToWishlist({id: 'prod-5', name: 'Gold ring', price: 'From Rs. 14.00', image: 'https://jelwo.myshopify.com/cdn/shop/files/jewelry-product-26.jpg?v=1742444221&width=352'})" class="flex h-10 w-10 items-center justify-center rounded-full border border-white text-white hover:bg-white hover:text-[#bb9d89] transition-colors"><svg
                                         xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                         stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
                                         <path stroke-linecap="round" stroke-linejoin="round"
                                             d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
                                     </svg></button>
                                 <button
-                                    class="flex h-10 w-10 items-center justify-center rounded-full border border-white text-white hover:bg-white hover:text-[#bb9d89] transition-colors"><svg
+                                    onclick="event.stopPropagation(); window.location.href='Product.html'" class="flex h-10 w-10 items-center justify-center rounded-full border border-white text-white hover:bg-white hover:text-[#bb9d89] transition-colors"><svg
                                         xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                         stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
                                         <path stroke-linecap="round" stroke-linejoin="round"
@@ -1208,17 +1201,16 @@
                             <!-- Hover Box -->
                             <div
                                 class="absolute inset-0 flex flex-col items-center justify-center gap-3 translate-y-full opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100 px-4">
-                                <div class="flex gap-2"><select
+                                <div class="flex gap-2"><select onclick="event.stopPropagation()"
                                         class="border border-gray-200 text-xs p-1 outline-none text-gray-500">
                                         <option>Gold</option>
                                     </select>
-                                    <div class="flex border border-gray-200 items-center text-xs"><button
+                                    <div class="flex border border-gray-200 items-center text-xs"><button onclick="event.stopPropagation()"
                                             class="px-2 text-gray-400">-</button><span
-                                            class="px-2 border-x border-gray-100">1</span><button
-                                            class="px-2 text-gray-400">+</button></div>
+                                            class="px-2 border-x border-gray-100">1</span><button onclick="event.stopPropagation()" class="px-2 text-gray-400">+</button></div>
                                 </div>
                                 <button
-                                    onclick="addToCart({id: 'prod-5', name: 'Gold ring', price: 'From Rs. 14.00', image: 'https://jelwo.myshopify.com/cdn/shop/files/jewelry-product-26.jpg?v=1742444221&width=352'})"
+                                    onclick="event.stopPropagation(); addToCart({id: 'prod-5', name: 'Gold ring', price: 'From Rs. 14.00', image: 'https://jelwo.myshopify.com/cdn/shop/files/jewelry-product-26.jpg?v=1742444221&width=352'})"
                                     class="border-b border-[#bb9d89] text-[#bb9d89] font-bold text-xs uppercase tracking-[0.2em] pb-1 hover:text-black hover:border-black transition-colors">Add
                                     to Cart</button>
                             </div>
@@ -1309,7 +1301,8 @@
                 <div class="swiper-wrapper">
 
                     <div
-                        class="swiper-slide group relative border border-gray-100 bg-white text-center transition-all hover:shadow-lg h-auto">
+                        onclick="window.location.href='Product.html'"
+                        class="swiper-slide group relative cursor-pointer border border-gray-100 bg-white text-center transition-all hover:shadow-lg h-auto">
                         <div class="relative aspect-square overflow-hidden bg-[#f9f9f9] p-8">
                             <span
                                 class="absolute left-2 top-2 z-20 bg-[#48bb78] px-2 py-1 text-xs text-white">25%</span>
@@ -1319,17 +1312,14 @@
                             <div
                                 class="absolute inset-0 z-10 flex items-center justify-center gap-3 bg-[#bb9d89] opacity-0 transition-opacity duration-300 group-hover:opacity-90">
                                 <button
-                                    onclick="addToWishlist({id: 'prod-6', name: 'Jhumkha', price: 'Rs. 15.00', image: 'https://jelwo.myshopify.com/cdn/shop/files/jewelry-product-51.jpg?v=1742445540&width=352'})"
-                                    class="flex h-10 w-10 items-center justify-center rounded-full border border-white text-white hover:bg-white hover:text-[#bb9d89] transition-colors">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    onclick="event.stopPropagation(); addToWishlist({id: 'prod-6', name: 'Jhumkha', price: 'Rs. 15.00', image: 'https://jelwo.myshopify.com/cdn/shop/files/jewelry-product-51.jpg?v=1742445540&width=352'})" class="flex h-10 w-10 items-center justify-center rounded-full border border-white text-white hover:bg-white hover:text-[#bb9d89] transition-colors"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                         stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
                                         <path stroke-linecap="round" stroke-linejoin="round"
                                             d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
                                     </svg>
                                 </button>
                                 <button
-                                    class="flex h-10 w-10 items-center justify-center rounded-full border border-white text-white hover:bg-white hover:text-[#bb9d89] transition-colors">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    onclick="event.stopPropagation(); window.location.href='Product.html'" class="flex h-10 w-10 items-center justify-center rounded-full border border-white text-white hover:bg-white hover:text-[#bb9d89] transition-colors"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                         stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
                                         <path stroke-linecap="round" stroke-linejoin="round"
                                             d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178Z" />
@@ -1372,17 +1362,16 @@
                             <div
                                 class="absolute inset-0 flex flex-col items-center justify-center gap-3 translate-y-full opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100 px-4">
                                 <div class="flex gap-2">
-                                    <select class="border border-gray-200 text-xs p-1 outline-none text-gray-500">
+                                    <select onclick="event.stopPropagation()" class="border border-gray-200 text-xs p-1 outline-none text-gray-500">
                                         <option>Gold</option>
                                     </select>
                                     <div class="flex border border-gray-200 items-center text-xs">
-                                        <button class="px-2 text-gray-400">-</button><span
-                                            class="px-2 border-x border-gray-100">1</span><button
-                                            class="px-2 text-gray-400">+</button>
+                                        <button onclick="event.stopPropagation()" class="px-2 text-gray-400">-</button><span
+                                            class="px-2 border-x border-gray-100">1</span><button onclick="event.stopPropagation()" class="px-2 text-gray-400">+</button>
                                     </div>
                                 </div>
                                 <button
-                                    onclick="addToCart({id: 'prod-6', name: 'Jhumkha', price: 'Rs. 15.00', image: 'https://jelwo.myshopify.com/cdn/shop/files/jewelry-product-51.jpg?v=1742445540&width=352'})"
+                                    onclick="event.stopPropagation(); addToCart({id: 'prod-6', name: 'Jhumkha', price: 'Rs. 15.00', image: 'https://jelwo.myshopify.com/cdn/shop/files/jewelry-product-51.jpg?v=1742445540&width=352'})"
                                     class="border-b border-[#bb9d89] text-[#bb9d89] font-bold text-xs uppercase tracking-[0.2em] pb-1 hover:text-black hover:border-black transition-colors">Add
                                     to Cart</button>
                             </div>
@@ -1390,7 +1379,8 @@
                     </div>
 
                     <div
-                        class="swiper-slide group relative border border-gray-100 bg-white text-center transition-all hover:shadow-lg h-auto">
+                        onclick="window.location.href='Product.html'"
+                        class="swiper-slide group relative cursor-pointer border border-gray-100 bg-white text-center transition-all hover:shadow-lg h-auto">
                         <div class="relative aspect-square overflow-hidden bg-[#f9f9f9] p-8">
                             <span
                                 class="absolute left-2 top-2 z-20 bg-[#48bb78] px-2 py-1 text-xs text-white">45%</span>
@@ -1399,15 +1389,14 @@
                             <div
                                 class="absolute inset-0 z-10 flex items-center justify-center gap-3 bg-[#bb9d89] opacity-0 transition-opacity duration-300 group-hover:opacity-90">
                                 <button
-                                    onclick="addToWishlist({id: 'prod-7', name: 'Chic diamond ring', price: 'From Rs. 22.00', image: 'https://jelwo.myshopify.com/cdn/shop/files/jewelry-product-9.jpg?v=1742442751&width=1920'})"
-                                    class="flex h-10 w-10 items-center justify-center rounded-full border border-white text-white hover:bg-white hover:text-[#bb9d89] transition-colors"><svg
+                                    onclick="event.stopPropagation(); addToWishlist({id: 'prod-7', name: 'Chic diamond ring', price: 'From Rs. 22.00', image: 'https://jelwo.myshopify.com/cdn/shop/files/jewelry-product-9.jpg?v=1742442751&width=1920'})" class="flex h-10 w-10 items-center justify-center rounded-full border border-white text-white hover:bg-white hover:text-[#bb9d89] transition-colors"><svg
                                         xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                         stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
                                         <path stroke-linecap="round" stroke-linejoin="round"
                                             d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
                                     </svg></button>
                                 <button
-                                    class="flex h-10 w-10 items-center justify-center rounded-full border border-white text-white hover:bg-white hover:text-[#bb9d89] transition-colors"><svg
+                                    onclick="event.stopPropagation(); window.location.href='Product.html'" class="flex h-10 w-10 items-center justify-center rounded-full border border-white text-white hover:bg-white hover:text-[#bb9d89] transition-colors"><svg
                                         xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                         stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
                                         <path stroke-linecap="round" stroke-linejoin="round"
@@ -1449,17 +1438,16 @@
                             <!-- Hover Box -->
                             <div
                                 class="absolute inset-0 flex flex-col items-center justify-center gap-3 translate-y-full opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100 px-4">
-                                <div class="flex gap-2"><select
+                                <div class="flex gap-2"><select onclick="event.stopPropagation()"
                                         class="border border-gray-200 text-xs p-1 outline-none text-gray-500">
                                         <option>Gold</option>
                                     </select>
-                                    <div class="flex border border-gray-200 items-center text-xs"><button
+                                    <div class="flex border border-gray-200 items-center text-xs"><button onclick="event.stopPropagation()"
                                             class="px-2 text-gray-400">-</button><span
-                                            class="px-2 border-x border-gray-100">1</span><button
-                                            class="px-2 text-gray-400">+</button></div>
+                                            class="px-2 border-x border-gray-100">1</span><button onclick="event.stopPropagation()" class="px-2 text-gray-400">+</button></div>
                                 </div>
                                 <button
-                                    onclick="addToCart({id: 'prod-7', name: 'Chic diamond ring', price: 'From Rs. 22.00', image: 'https://jelwo.myshopify.com/cdn/shop/files/jewelry-product-9.jpg?v=1742442751&width=1920'})"
+                                    onclick="event.stopPropagation(); addToCart({id: 'prod-7', name: 'Chic diamond ring', price: 'From Rs. 22.00', image: 'https://jelwo.myshopify.com/cdn/shop/files/jewelry-product-9.jpg?v=1742442751&width=1920'})"
                                     class="border-b border-[#bb9d89] text-[#bb9d89] font-bold text-xs uppercase tracking-[0.2em] pb-1 hover:text-black hover:border-black transition-colors">Add
                                     to Cart</button>
                             </div>
@@ -1467,7 +1455,8 @@
                     </div>
 
                     <div
-                        class="swiper-slide group relative border border-gray-100 bg-white text-center transition-all hover:shadow-lg h-auto">
+                        onclick="window.location.href='Product.html'"
+                        class="swiper-slide group relative cursor-pointer border border-gray-100 bg-white text-center transition-all hover:shadow-lg h-auto">
                         <div class="relative aspect-square overflow-hidden bg-[#f9f9f9] p-8">
                             <span
                                 class="absolute left-2 top-2 z-20 bg-[#48bb78] px-2 py-1 text-xs text-white">64%</span>
@@ -1476,15 +1465,14 @@
                             <div
                                 class="absolute inset-0 z-10 flex items-center justify-center gap-3 bg-[#bb9d89] opacity-0 transition-opacity duration-300 group-hover:opacity-90">
                                 <button
-                                    onclick="addToWishlist({id: 'prod-8', name: 'Gemstone jhumkas', price: 'Rs. 18.00', image: 'https://jelwo.myshopify.com/cdn/shop/files/jewelry-product-8.jpg?v=1742442751&width=1920'})"
-                                    class="flex h-10 w-10 items-center justify-center rounded-full border border-white text-white hover:bg-white hover:text-[#bb9d89] transition-colors"><svg
+                                    onclick="event.stopPropagation(); addToWishlist({id: 'prod-8', name: 'Gemstone jhumkas', price: 'Rs. 18.00', image: 'https://jelwo.myshopify.com/cdn/shop/files/jewelry-product-8.jpg?v=1742442751&width=1920'})" class="flex h-10 w-10 items-center justify-center rounded-full border border-white text-white hover:bg-white hover:text-[#bb9d89] transition-colors"><svg
                                         xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                         stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
                                         <path stroke-linecap="round" stroke-linejoin="round"
                                             d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
                                     </svg></button>
                                 <button
-                                    class="flex h-10 w-10 items-center justify-center rounded-full border border-white text-white hover:bg-white hover:text-[#bb9d89] transition-colors"><svg
+                                    onclick="event.stopPropagation(); window.location.href='Product.html'" class="flex h-10 w-10 items-center justify-center rounded-full border border-white text-white hover:bg-white hover:text-[#bb9d89] transition-colors"><svg
                                         xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                         stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
                                         <path stroke-linecap="round" stroke-linejoin="round"
@@ -1507,17 +1495,16 @@
                             <!-- Hover Box -->
                             <div
                                 class="absolute inset-0 flex flex-col items-center justify-center gap-3 translate-y-full opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100 px-4">
-                                <div class="flex gap-2"><select
+                                <div class="flex gap-2"><select onclick="event.stopPropagation()"
                                         class="border border-gray-200 text-xs p-1 outline-none text-gray-500">
                                         <option>Gold</option>
                                     </select>
-                                    <div class="flex border border-gray-200 items-center text-xs"><button
+                                    <div class="flex border border-gray-200 items-center text-xs"><button onclick="event.stopPropagation()"
                                             class="px-2 text-gray-400">-</button><span
-                                            class="px-2 border-x border-gray-100">1</span><button
-                                            class="px-2 text-gray-400">+</button></div>
+                                            class="px-2 border-x border-gray-100">1</span><button onclick="event.stopPropagation()" class="px-2 text-gray-400">+</button></div>
                                 </div>
                                 <button
-                                    onclick="addToCart({id: 'prod-8', name: 'Gemstone jhumkas', price: 'Rs. 18.00', image: 'https://jelwo.myshopify.com/cdn/shop/files/jewelry-product-8.jpg?v=1742442751&width=1920'})"
+                                    onclick="event.stopPropagation(); addToCart({id: 'prod-8', name: 'Gemstone jhumkas', price: 'Rs. 18.00', image: 'https://jelwo.myshopify.com/cdn/shop/files/jewelry-product-8.jpg?v=1742442751&width=1920'})"
                                     class="border-b border-[#bb9d89] text-[#bb9d89] font-bold text-xs uppercase tracking-[0.2em] pb-1 hover:text-black hover:border-black transition-colors">Add
                                     to Cart</button>
                             </div>
@@ -1525,7 +1512,8 @@
                     </div>
 
                     <div
-                        class="swiper-slide group relative border border-gray-100 bg-white text-center transition-all hover:shadow-lg h-auto">
+                        onclick="window.location.href='Product.html'"
+                        class="swiper-slide group relative cursor-pointer border border-gray-100 bg-white text-center transition-all hover:shadow-lg h-auto">
                         <div class="relative aspect-square overflow-hidden bg-[#f9f9f9] p-8">
                             <span
                                 class="absolute left-2 top-2 z-20 bg-[#48bb78] px-2 py-1 text-xs text-white">68%</span>
@@ -1534,15 +1522,14 @@
                             <div
                                 class="absolute inset-0 z-10 flex items-center justify-center gap-3 bg-[#bb9d89] opacity-0 transition-opacity duration-300 group-hover:opacity-90">
                                 <button
-                                    onclick="addToWishlist({id: 'prod-9', name: 'Drop gold earrings', price: 'From Rs. 14.00', image: 'https://jelwo.myshopify.com/cdn/shop/files/jewelry-product-7.jpg?v=1742442751&width=1920'})"
-                                    class="flex h-10 w-10 items-center justify-center rounded-full border border-white text-white hover:bg-white hover:text-[#bb9d89] transition-colors"><svg
+                                    onclick="event.stopPropagation(); addToWishlist({id: 'prod-9', name: 'Drop gold earrings', price: 'From Rs. 14.00', image: 'https://jelwo.myshopify.com/cdn/shop/files/jewelry-product-7.jpg?v=1742442751&width=1920'})" class="flex h-10 w-10 items-center justify-center rounded-full border border-white text-white hover:bg-white hover:text-[#bb9d89] transition-colors"><svg
                                         xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                         stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
                                         <path stroke-linecap="round" stroke-linejoin="round"
                                             d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
                                     </svg></button>
                                 <button
-                                    class="flex h-10 w-10 items-center justify-center rounded-full border border-white text-white hover:bg-white hover:text-[#bb9d89] transition-colors"><svg
+                                    onclick="event.stopPropagation(); window.location.href='Product.html'" class="flex h-10 w-10 items-center justify-center rounded-full border border-white text-white hover:bg-white hover:text-[#bb9d89] transition-colors"><svg
                                         xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                         stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
                                         <path stroke-linecap="round" stroke-linejoin="round"
@@ -1584,17 +1571,16 @@
                             <!-- Hover Box -->
                             <div
                                 class="absolute inset-0 flex flex-col items-center justify-center gap-3 translate-y-full opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100 px-4">
-                                <div class="flex gap-2"><select
+                                <div class="flex gap-2"><select onclick="event.stopPropagation()"
                                         class="border border-gray-200 text-xs p-1 outline-none text-gray-500">
                                         <option>Gold</option>
                                     </select>
-                                    <div class="flex border border-gray-200 items-center text-xs"><button
+                                    <div class="flex border border-gray-200 items-center text-xs"><button onclick="event.stopPropagation()"
                                             class="px-2 text-gray-400">-</button><span
-                                            class="px-2 border-x border-gray-100">1</span><button
-                                            class="px-2 text-gray-400">+</button></div>
+                                            class="px-2 border-x border-gray-100">1</span><button onclick="event.stopPropagation()" class="px-2 text-gray-400">+</button></div>
                                 </div>
                                 <button
-                                    onclick="addToCart({id: 'prod-9', name: 'Drop gold earrings', price: 'From Rs. 14.00', image: 'https://jelwo.myshopify.com/cdn/shop/files/jewelry-product-7.jpg?v=1742442751&width=1920'})"
+                                    onclick="event.stopPropagation(); addToCart({id: 'prod-9', name: 'Drop gold earrings', price: 'From Rs. 14.00', image: 'https://jelwo.myshopify.com/cdn/shop/files/jewelry-product-7.jpg?v=1742442751&width=1920'})"
                                     class="border-b border-[#bb9d89] text-[#bb9d89] font-bold text-xs uppercase tracking-[0.2em] pb-1 hover:text-black hover:border-black transition-colors">Add
                                     to Cart</button>
                             </div>
@@ -1602,7 +1588,8 @@
                     </div>
 
                     <div
-                        class="swiper-slide group relative border border-gray-100 bg-white text-center transition-all hover:shadow-lg h-auto">
+                        onclick="window.location.href='Product.html'"
+                        class="swiper-slide group relative cursor-pointer border border-gray-100 bg-white text-center transition-all hover:shadow-lg h-auto">
                         <div class="relative aspect-square overflow-hidden bg-[#f9f9f9] p-8">
                             <span
                                 class="absolute left-2 top-2 z-20 bg-[#48bb78] px-2 py-1 text-xs text-white">68%</span>
@@ -1611,15 +1598,14 @@
                             <div
                                 class="absolute inset-0 z-10 flex items-center justify-center gap-3 bg-[#bb9d89] opacity-0 transition-opacity duration-300 group-hover:opacity-90">
                                 <button
-                                    onclick="addToWishlist({id: 'prod-10', name: 'Drop gold earrings', price: 'From Rs. 14.00', image: 'https://jelwo.myshopify.com/cdn/shop/files/jewelry-product-7.jpg?v=1742442751&width=1920'})"
-                                    class="flex h-10 w-10 items-center justify-center rounded-full border border-white text-white hover:bg-white hover:text-[#bb9d89] transition-colors"><svg
+                                    onclick="event.stopPropagation(); addToWishlist({id: 'prod-10', name: 'Drop gold earrings', price: 'From Rs. 14.00', image: 'https://jelwo.myshopify.com/cdn/shop/files/jewelry-product-7.jpg?v=1742442751&width=1920'})" class="flex h-10 w-10 items-center justify-center rounded-full border border-white text-white hover:bg-white hover:text-[#bb9d89] transition-colors"><svg
                                         xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                         stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
                                         <path stroke-linecap="round" stroke-linejoin="round"
                                             d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
                                     </svg></button>
                                 <button
-                                    class="flex h-10 w-10 items-center justify-center rounded-full border border-white text-white hover:bg-white hover:text-[#bb9d89] transition-colors"><svg
+                                    onclick="event.stopPropagation(); window.location.href='Product.html'" class="flex h-10 w-10 items-center justify-center rounded-full border border-white text-white hover:bg-white hover:text-[#bb9d89] transition-colors"><svg
                                         xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                         stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
                                         <path stroke-linecap="round" stroke-linejoin="round"
@@ -1642,17 +1628,16 @@
                             <!-- Hover Box -->
                             <div
                                 class="absolute inset-0 flex flex-col items-center justify-center gap-3 translate-y-full opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100 px-4">
-                                <div class="flex gap-2"><select
+                                <div class="flex gap-2"><select onclick="event.stopPropagation()"
                                         class="border border-gray-200 text-xs p-1 outline-none text-gray-500">
                                         <option>Gold</option>
                                     </select>
-                                    <div class="flex border border-gray-200 items-center text-xs"><button
+                                    <div class="flex border border-gray-200 items-center text-xs"><button onclick="event.stopPropagation()"
                                             class="px-2 text-gray-400">-</button><span
-                                            class="px-2 border-x border-gray-100">1</span><button
-                                            class="px-2 text-gray-400">+</button></div>
+                                            class="px-2 border-x border-gray-100">1</span><button onclick="event.stopPropagation()" class="px-2 text-gray-400">+</button></div>
                                 </div>
                                 <button
-                                    onclick="addToCart({id: 'prod-10', name: 'Drop gold earrings', price: 'From Rs. 14.00', image: 'https://jelwo.myshopify.com/cdn/shop/files/jewelry-product-7.jpg?v=1742442751&width=1920'})"
+                                    onclick="event.stopPropagation(); addToCart({id: 'prod-10', name: 'Drop gold earrings', price: 'From Rs. 14.00', image: 'https://jelwo.myshopify.com/cdn/shop/files/jewelry-product-7.jpg?v=1742442751&width=1920'})"
                                     class="border-b border-[#bb9d89] text-[#bb9d89] font-bold text-xs uppercase tracking-[0.2em] pb-1 hover:text-black hover:border-black transition-colors">Add
                                     to Cart</button>
                             </div>
@@ -2083,7 +2068,7 @@
                             <h3 class="text-lg font-semibold leading-tight">Diamond Necklace</h3>
                             <p class="text-md font-bold mt-1">Rs. 45.00</p>
                             <button
-                                onclick="addToCart({id: 'prod-reel-2', name: 'Diamond Necklace', price: 'Rs. 45.00', image: 'https://jelwo.myshopify.com/cdn/shop/files/jewelry-product-6.jpg?v=1742442751&width=300'})"
+                                onclick="event.stopPropagation(); addToCart({id: 'prod-reel-2', name: 'Diamond Necklace', price: 'Rs. 45.00', image: 'https://jelwo.myshopify.com/cdn/shop/files/jewelry-product-6.jpg?v=1742442751&width=300'})"
                                 class="mt-4 w-full bg-[#b58e58] py-2.5 rounded-full text-xs font-bold tracking-widest hover:bg-white hover:text-[#b58e58] transition-all">ADD
                                 TO CART</button>
                         </div>
@@ -2104,7 +2089,7 @@
                             <h3 class="text-lg font-semibold leading-tight">Gold Bracelets</h3>
                             <p class="text-md font-bold mt-1">Rs. 30.00</p>
                             <button
-                                onclick="addToCart({id: 'prod-reel-3', name: 'Gold Bracelets', price: 'Rs. 30.00', image: 'https://jelwo.myshopify.com/cdn/shop/files/jewelry-product-6.jpg?v=1742442751&width=300'})"
+                                onclick="event.stopPropagation(); addToCart({id: 'prod-reel-3', name: 'Gold Bracelets', price: 'Rs. 30.00', image: 'https://jelwo.myshopify.com/cdn/shop/files/jewelry-product-6.jpg?v=1742442751&width=300'})"
                                 class="mt-4 w-full bg-[#b58e58] py-2.5 rounded-full text-xs font-bold tracking-widest hover:bg-white hover:text-[#b58e58] transition-all">ADD
                                 TO CART</button>
                         </div>
@@ -2125,7 +2110,7 @@
                             <h3 class="text-lg font-semibold leading-tight">Pearl Set</h3>
                             <p class="text-md font-bold mt-1">Rs. 55.00</p>
                             <button
-                                onclick="addToCart({id: 'prod-reel-4', name: 'Pearl Set', price: 'Rs. 55.00', image: 'https://jelwo.myshopify.com/cdn/shop/files/jewelry-product-6.jpg?v=1742442751&width=300'})"
+                                onclick="event.stopPropagation(); addToCart({id: 'prod-reel-4', name: 'Pearl Set', price: 'Rs. 55.00', image: 'https://jelwo.myshopify.com/cdn/shop/files/jewelry-product-6.jpg?v=1742442751&width=300'})"
                                 class="mt-4 w-full bg-[#b58e58] py-2.5 rounded-full text-xs font-bold tracking-widest hover:bg-white hover:text-[#b58e58] transition-all">ADD
                                 TO CART</button>
                         </div>
@@ -2146,7 +2131,7 @@
                             <h3 class="text-lg font-semibold leading-tight">Luxury Gemstone</h3>
                             <p class="text-md font-bold mt-1">Rs. 99.00</p>
                             <button
-                                onclick="addToCart({id: 'prod-reel-5', name: 'Luxury Gemstone', price: 'Rs. 99.00', image: 'https://jelwo.myshopify.com/cdn/shop/files/jewelry-product-6.jpg?v=1742442751&width=300'})"
+                                onclick="event.stopPropagation(); addToCart({id: 'prod-reel-5', name: 'Luxury Gemstone', price: 'Rs. 99.00', image: 'https://jelwo.myshopify.com/cdn/shop/files/jewelry-product-6.jpg?v=1742442751&width=300'})"
                                 class="mt-4 w-full bg-[#b58e58] py-2.5 rounded-full text-xs font-bold tracking-widest hover:bg-white hover:text-[#b58e58] transition-all">ADD
                                 TO CART</button>
                         </div>
@@ -2167,7 +2152,7 @@
                             <h3 class="text-lg font-semibold leading-tight">Diamond Necklace</h3>
                             <p class="text-md font-bold mt-1">Rs. 45.00</p>
                             <button
-                                onclick="addToCart({id: 'prod-reel-6', name: 'Diamond Necklace', price: 'Rs. 45.00', image: 'https://jelwo.myshopify.com/cdn/shop/files/jewelry-product-6.jpg?v=1742442751&width=300'})"
+                                onclick="event.stopPropagation(); addToCart({id: 'prod-reel-6', name: 'Diamond Necklace', price: 'Rs. 45.00', image: 'https://jelwo.myshopify.com/cdn/shop/files/jewelry-product-6.jpg?v=1742442751&width=300'})"
                                 class="mt-4 w-full bg-[#b58e58] py-2.5 rounded-full text-xs font-bold tracking-widest hover:bg-white hover:text-[#b58e58] transition-all">ADD
                                 TO CART</button>
                         </div>
@@ -2188,7 +2173,7 @@
                             <h3 class="text-lg font-semibold leading-tight">Gold Bracelets</h3>
                             <p class="text-md font-bold mt-1">Rs. 30.00</p>
                             <button
-                                onclick="addToCart({id: 'prod-reel-7', name: 'Gold Bracelets', price: 'Rs. 30.00', image: 'https://jelwo.myshopify.com/cdn/shop/files/jewelry-product-6.jpg?v=1742442751&width=300'})"
+                                onclick="event.stopPropagation(); addToCart({id: 'prod-reel-7', name: 'Gold Bracelets', price: 'Rs. 30.00', image: 'https://jelwo.myshopify.com/cdn/shop/files/jewelry-product-6.jpg?v=1742442751&width=300'})"
                                 class="mt-4 w-full bg-[#b58e58] py-2.5 rounded-full text-xs font-bold tracking-widest hover:bg-white hover:text-[#b58e58] transition-all">ADD
                                 TO CART</button>
                         </div>
@@ -2330,3 +2315,8 @@
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 </body>
 </html>
+
+
+
+
+
