@@ -110,20 +110,22 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     // 7. News Swiper
-    const newsSwiper = new Swiper('.newsSwiper', {
-        slidesPerView: 1,
-        spaceBetween: 30,
-        loop: true,
-        autoplay: {
-            delay: 6000,
-            disableOnInteraction: false
-        },
-        breakpoints: {
-            640: { slidesPerView: 2 },
-            1024: { slidesPerView: 3 },
-            1280: { slidesPerView: 4 }
-        }
-    });
+    if (document.querySelector('.newsSwiper')) {
+        const newsSwiper = new Swiper('.newsSwiper', {
+            slidesPerView: 1,
+            spaceBetween: 30,
+            loop: true,
+            autoplay: {
+                delay: 6000,
+                disableOnInteraction: false
+            },
+            breakpoints: {
+                640: { slidesPerView: 2 },
+                1024: { slidesPerView: 3 },
+                1280: { slidesPerView: 3 }
+            }
+        });
+    }
 
     // 6. Countdown Timer Logic
     const targetDate = new Date("March 31, 2026 23:59:59").getTime();
