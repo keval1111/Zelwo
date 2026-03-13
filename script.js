@@ -375,6 +375,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
         localStorage.setItem('cart', JSON.stringify(cart));
         updateCartCount();
+        renderCartDrawer();
         showToast('Item added to cart!');
     }
 
@@ -625,6 +626,176 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
+    function getCartTotal() {
+        return cart.reduce((sum, item) => {
+            const price = parseFloat(item.price.replace(/[^\d.]/g, '')) || 0;
+            return sum + (price * (item.quantity || 1));
+        }, 0);
+    }
+
+    function getCartDrawerMarkup() {
+        return `
+            <div id="cart-drawer-overlay" class="fixed inset-0 bg-black/40 z-[120] opacity-0 pointer-events-none transition-opacity duration-300"></div>
+            <aside id="cart-drawer"
+                class="fixed top-0 right-0 h-full w-full max-w-[700px] bg-white z-[121] translate-x-full transition-transform duration-300 shadow-2xl flex flex-col">
+                <div class="bg-[#eee9e4] px-6 py-4 text-center text-[18px] font-medium text-[#111827]">
+                    New customers save 10% with code <span class="font-bold">WELCOME10</span>
+                </div>
+                <div class="flex items-center justify-between px-6 md:px-10 py-8 border-b border-gray-200">
+                    <h2 class="text-[24px] md:text-[28px] font-semibold text-[#111827]">My shopping cart</h2>
+                    <button type="button" id="cart-drawer-close" class="text-[#111827] text-3xl leading-none hover:text-[#a77f66] transition-colors" aria-label="Close cart drawer">
+                        &times;
+                    </button>
+                </div>
+
+                <div id="cart-drawer-body" class="flex-1 overflow-y-auto"></div>
+            </aside>
+        `;
+    }
+
+    function createCartDrawer() {
+        if (document.getElementById('cart-drawer')) return;
+
+        document.body.insertAdjacentHTML('beforeend', getCartDrawerMarkup());
+
+        const closeBtn = document.getElementById('cart-drawer-close');
+        const overlay = document.getElementById('cart-drawer-overlay');
+
+        if (closeBtn) closeBtn.addEventListener('click', closeCartDrawer);
+        if (overlay) overlay.addEventListener('click', closeCartDrawer);
+
+        document.addEventListener('keydown', function (event) {
+            if (event.key === 'Escape') closeCartDrawer();
+        });
+    }
+
+    function openCartDrawer() {
+        createCartDrawer();
+        renderCartDrawer();
+
+        const drawer = document.getElementById('cart-drawer');
+        const overlay = document.getElementById('cart-drawer-overlay');
+
+        if (!drawer || !overlay) return;
+
+        drawer.classList.remove('translate-x-full');
+        overlay.classList.remove('opacity-0', 'pointer-events-none');
+        overlay.classList.add('opacity-100');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeCartDrawer() {
+        const drawer = document.getElementById('cart-drawer');
+        const overlay = document.getElementById('cart-drawer-overlay');
+
+        if (!drawer || !overlay) return;
+
+        drawer.classList.add('translate-x-full');
+        overlay.classList.remove('opacity-100');
+        overlay.classList.add('opacity-0', 'pointer-events-none');
+        document.body.style.overflow = '';
+    }
+
+    function renderCartDrawer() {
+        const drawerBody = document.getElementById('cart-drawer-body');
+        if (!drawerBody) return;
+
+        if (cart.length === 0) {
+            drawerBody.innerHTML = `
+                <div class="flex min-h-full flex-col">
+                    <div class="flex-1 px-6 md:px-10 py-12 md:py-16">
+                        <div class="flex h-full flex-col items-center justify-center text-center">
+                            <i class="fa-solid fa-bag-shopping text-[46px] text-[#7c8796]"></i>
+                            <p class="mt-6 text-[22px] md:text-[26px] text-[#111827]">Your cart is empty</p>
+                            <button type="button" data-close-cart-drawer
+                                class="mt-8 min-w-[320px] rounded-full bg-[#b38768] px-8 py-5 text-[16px] font-bold uppercase tracking-wide text-white transition-colors hover:bg-[#9e775a]">
+                                Continue Shopping
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="border-t border-gray-200 px-6 md:px-10 py-8">
+                        <div class="mb-6 flex items-center justify-between">
+                            <h3 class="text-[22px] md:text-[24px] font-semibold text-[#111827]">You might also like</h3>
+                            <div class="flex items-center gap-3 text-[#7c8796]">
+                                <button type="button" class="h-11 w-11 rounded-full border border-gray-200 text-xl hover:text-[#a77f66] transition-colors" aria-label="Previous recommendation">
+                                    <i class="fa-solid fa-arrow-left"></i>
+                                </button>
+                                <button type="button" class="h-11 w-11 rounded-full border border-gray-200 text-xl hover:text-[#a77f66] transition-colors" aria-label="Next recommendation">
+                                    <i class="fa-solid fa-arrow-right"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-[180px_1fr] gap-5 items-center">
+                            <div class="bg-[#f7f7f7] p-5">
+                                <img src="img/jewelry-pro-21.webp" alt="Gemstone chain bracelet" class="w-full h-[180px] object-contain">
+                            </div>
+                            <div>
+                                <h4 class="text-[18px] md:text-[20px] font-semibold text-[#1f2937] leading-8">Gemstone chain bracelet</h4>
+                                <p class="mt-3 text-[16px] md:text-[18px] font-bold text-[#b38768]">Rs. 17.00</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+        } else {
+            const total = getCartTotal();
+
+            drawerBody.innerHTML = `
+                <div class="flex min-h-full flex-col">
+                    <div class="flex-1 px-6 md:px-10 py-6 space-y-5">
+                        ${cart.map(item => {
+                            const priceNum = parseFloat(item.price.replace(/[^\d.]/g, '')) || 0;
+                            const itemTotal = priceNum * (item.quantity || 1);
+                            return `
+                                <div class="flex gap-4 border-b border-gray-100 pb-5">
+                                    <div class="w-24 h-24 bg-[#f7f7f7] rounded-md p-3 flex items-center justify-center shrink-0">
+                                        <img src="${item.image}" alt="${item.name}" class="w-full h-full object-contain">
+                                    </div>
+                                    <div class="flex-1">
+                                        <div class="flex items-start justify-between gap-4">
+                                            <div>
+                                                <h4 class="text-[16px] font-semibold text-[#111827] leading-6">${item.name}</h4>
+                                                <p class="mt-2 text-[14px] font-bold text-[#b38768]">${item.price}</p>
+                                            </div>
+                                            <button onclick="removeFromCart('${item.id}')" class="text-gray-400 hover:text-red-500 text-lg" aria-label="Remove item">
+                                                <i class="ri-close-line"></i>
+                                            </button>
+                                        </div>
+                                        <div class="mt-4 flex items-center justify-between">
+                                            <div class="flex items-center border border-gray-200 rounded-full overflow-hidden">
+                                                <button onclick="updateQuantity('${item.id}', -1)" class="px-4 py-2 text-gray-400 hover:text-gray-800">-</button>
+                                                <span class="px-4 py-2 border-x border-gray-200 text-sm font-semibold">${item.quantity || 1}</span>
+                                                <button onclick="updateQuantity('${item.id}', 1)" class="px-4 py-2 text-gray-400 hover:text-gray-800">+</button>
+                                            </div>
+                                            <p class="text-[15px] font-semibold text-[#111827]">Rs. ${itemTotal.toFixed(2)}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            `;
+                        }).join('')}
+                    </div>
+
+                    <div class="border-t border-gray-200 px-6 md:px-10 py-6 bg-[#fcfaf8]">
+                        <div class="flex items-center justify-between text-[15px] text-gray-500">
+                            <span>Subtotal</span>
+                            <span class="font-semibold text-[#111827]">Rs. ${total.toFixed(2)}</span>
+                        </div>
+                        <a href="Cart.html" data-cart-drawer-ignore="true"
+                            class="mt-5 block w-full rounded-full bg-[#111827] px-8 py-4 text-center text-[14px] font-bold uppercase tracking-wide text-white transition-colors hover:bg-[#a77f66]">
+                            View Cart
+                        </a>
+                    </div>
+                </div>
+            `;
+        }
+
+        drawerBody.querySelectorAll('[data-close-cart-drawer]').forEach(button => {
+            button.addEventListener('click', closeCartDrawer);
+        });
+    }
+
     // Update quantity
     function updateQuantity(id, change) {
         const item = cart.find(c => c.id === id);
@@ -637,6 +808,7 @@ document.addEventListener('DOMContentLoaded', function () {
             localStorage.setItem('cart', JSON.stringify(cart));
             updateCartCount();
             renderCart();
+            renderCartDrawer();
         }
     }
 
@@ -646,6 +818,7 @@ document.addEventListener('DOMContentLoaded', function () {
         localStorage.setItem('cart', JSON.stringify(cart));
         updateCartCount();
         renderCart();
+        renderCartDrawer();
         showToast('Item removed from cart');
     }
 
@@ -670,6 +843,17 @@ document.addEventListener('DOMContentLoaded', function () {
     // Update counts on page load
     updateWishlistCount();
     updateCartCount();
+    createCartDrawer();
+    renderCartDrawer();
+
+    document.querySelectorAll('a[href="cart.html"], a[href="Cart.html"]').forEach(link => {
+        link.addEventListener('click', function (event) {
+            if (this.dataset.cartDrawerIgnore === 'true') return;
+            if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+            event.preventDefault();
+            openCartDrawer();
+        });
+    });
 
     document.querySelectorAll('[data-collection-link]').forEach((card) => {
         card.addEventListener('click', function () {
