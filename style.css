@@ -44,6 +44,97 @@ body {
   transition-timing-function: linear;
 }   
 
+.news-article {
+  font-size: 15px;
+}
+
+.news-article h2,
+.news-article h3,
+.news-article h4 {
+  letter-spacing: -0.02em;
+}
+
+.shop-category-card {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.shop-category-card:hover {
+  transform: translateY(-4px);
+}
+
+.collection-shell {
+  font-size: 14px;
+}
+
+.collection-hero {
+  background:
+    linear-gradient(rgba(20, 20, 20, 0.18), rgba(20, 20, 20, 0.18)),
+    url('img/jewelry-4-banner-1.webp') center/cover no-repeat;
+}
+
+.collection-filter-scroll {
+  max-height: 220px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+}
+
+.collection-filter-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+
+.collection-filter-scroll::-webkit-scrollbar-thumb {
+  background: #c2b7ae;
+}
+
+.collection-grid.list-view {
+  grid-template-columns: 1fr;
+}
+
+.collection-grid.list-view .collection-item {
+  display: grid;
+  grid-template-columns: minmax(220px, 280px) minmax(0, 1fr);
+}
+
+.collection-grid.list-view .collection-card-body {
+  align-items: flex-start;
+  justify-content: center;
+  padding: 28px;
+  text-align: left;
+}
+
+.collection-grid.list-view .collection-timer {
+  justify-content: flex-start;
+}
+
+.collection-range {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 2px;
+  background: #1f1f1f;
+}
+
+.collection-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  background: #fff;
+  border: 2px solid #1f1f1f;
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.filter-chip-active {
+  color: #a77f66;
+}
+
+@media (max-width: 1024px) {
+  .collection-grid.list-view .collection-item {
+    grid-template-columns: 1fr;
+  }
+}
+
 
   @media (max-width: 1024px) {
     .categorySwiper .swiper-slide {

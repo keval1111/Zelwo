@@ -32,82 +32,92 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // 2. Main Jewelry Carousel (Swiper)
-    const mainJewelrySwiper = new Swiper('.main-jewelry-carousel', {
-        loop: true,
-        speed: 1200,
-        grabCursor: true,
-        keyboard: { enabled: true },
-        autoplay: { delay: 5000, disableOnInteraction: false },
-    });
+    if (document.querySelector('.main-jewelry-carousel')) {
+        const mainJewelrySwiper = new Swiper('.main-jewelry-carousel', {
+            loop: true,
+            speed: 1200,
+            grabCursor: true,
+            keyboard: { enabled: true },
+            autoplay: { delay: 5000, disableOnInteraction: false },
+        });
+    }
 
     // 3. Category Swiper (Popular Category with Auto Slide)
-    const categorySwiper = new Swiper(".categorySwiper", {
-        slidesPerView: "auto",
-        spaceBetween: 0,
-        grabCursor: true,
-        freeMode: true,
-        loop: true,
-        autoplay: {
-            delay: 3000,
-            disableOnInteraction: true,
-            pauseOnMouseEnter: true,
-        },
-        speed: 600,
-    });
+    if (document.querySelector('.categorySwiper')) {
+        const categorySwiper = new Swiper(".categorySwiper", {
+            slidesPerView: "auto",
+            spaceBetween: 0,
+            grabCursor: true,
+            freeMode: true,
+            loop: true,
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: true,
+                pauseOnMouseEnter: true,
+            },
+            speed: 600,
+        });
+    }
 
     // 4. Jewelry Product Section Swiper (RENAMED to jewelrySwiper)
-    const jewelrySwiper = new Swiper('.myJewelrySwiper', {
-        slidesPerView: 1,
-        spaceBetween: 20,
-        loop: true,
-        autoplay: {
-            delay: 4000,
-            disableOnInteraction: false
-        },
-        breakpoints: {
-            480: { slidesPerView: 2, spaceBetween: 20 },
-            768: { slidesPerView: 3, spaceBetween: 24 },
-            1024: { slidesPerView: 4, spaceBetween: 30 }
-        }
-    });
+    if (document.querySelector('.myJewelrySwiper')) {
+        const jewelrySwiper = new Swiper('.myJewelrySwiper', {
+            slidesPerView: 1,
+            spaceBetween: 20,
+            loop: true,
+            autoplay: {
+                delay: 4000,
+                disableOnInteraction: false
+            },
+            breakpoints: {
+                480: { slidesPerView: 2, spaceBetween: 20 },
+                768: { slidesPerView: 3, spaceBetween: 24 },
+                1024: { slidesPerView: 4, spaceBetween: 30 }
+            }
+        });
+    }
 
     // 5. Reels Section Swiper (RENAMED to reelsSwiper)
-    const reelsSwiper = new Swiper('.reelSwiper', {
-        slidesPerView: 1,
-        spaceBetween: 15,
-        loop: true,
-        freeMode: true,
-        speed: 8000,
-        autoplay: {
-            delay: 0,
-            disableOnInteraction: false
-        },
-        navigation: {
-            nextEl: '.reel-next',
-            prevEl: '.reel-prev',
-        },
-        breakpoints: {
-            480: { slidesPerView: 2 },
-            768: { slidesPerView: 3 },
-            1024: { slidesPerView: 4 },
-            1280: { slidesPerView: 5 }
-        }
-    });
+    if (document.querySelector('.reelSwiper')) {
+        const reelsSwiper = new Swiper('.reelSwiper', {
+            slidesPerView: 1,
+            spaceBetween: 15,
+            loop: true,
+            freeMode: true,
+            speed: 8000,
+            autoplay: {
+                delay: 0,
+                disableOnInteraction: false
+            },
+            navigation: {
+                nextEl: '.reel-next',
+                prevEl: '.reel-prev',
+            },
+            breakpoints: {
+                480: { slidesPerView: 2 },
+                768: { slidesPerView: 3 },
+                1024: { slidesPerView: 4 },
+                1280: { slidesPerView: 5 }
+            }
+        });
+    }
 
     // 6. Testimonials Swiper
-    const testimonialSwiper = new Swiper('.mySwiper', {
-        slidesPerView: 1,
-        spaceBetween: 30,
-        loop: true,
-        autoplay: {
-            delay: 5000,
-            disableOnInteraction: false
-        },
-        breakpoints: {
-            768: { slidesPerView: 2 },
-            1024: { slidesPerView: 3 }
-        }
-    });
+    if (document.querySelector('.mySwiper')) {
+        const testimonialSwiper = new Swiper('.mySwiper', {
+            slidesPerView: 1,
+            spaceBetween: 30,
+            loop: true,
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: false
+            },
+            breakpoints: {
+                768: { slidesPerView: 2 },
+                1024: { slidesPerView: 3 }
+            }
+        });
+    }
 
     // 7. News Swiper
     if (document.querySelector('.newsSwiper')) {
@@ -207,6 +217,8 @@ document.addEventListener('DOMContentLoaded', function () {
     window.addEventListener('scroll', () => {
         const bar = document.getElementById('stickyBar');
         const trigger = document.getElementById('buyBtnMain');
+        if (!bar || !trigger) return;
+
         const pos = trigger.getBoundingClientRect().bottom + window.scrollY;
         if (window.scrollY > pos) {
             bar.classList.remove('translate-y-full');
@@ -659,6 +671,15 @@ document.addEventListener('DOMContentLoaded', function () {
     updateWishlistCount();
     updateCartCount();
 
+    document.querySelectorAll('[data-collection-link]').forEach((card) => {
+        card.addEventListener('click', function () {
+            const href = this.dataset.collectionLink;
+            if (href) {
+                window.location.href = href;
+            }
+        });
+    });
+
     // Render wishlist if on wishlist page
     if (document.getElementById('wishlist-items')) {
         renderWishlist();
@@ -667,6 +688,163 @@ document.addEventListener('DOMContentLoaded', function () {
     // Render cart if on cart page
     if (document.getElementById('cart-items')) {
         renderCart();
+    }
+
+    const collectionPage = document.querySelector('[data-collection-page]');
+    if (collectionPage) {
+        const params = new URLSearchParams(window.location.search);
+        const selectedCategory = params.get('category');
+        const titleTargets = document.querySelectorAll('[data-collection-title]');
+        const crumbTarget = document.querySelector('[data-collection-crumb]');
+        const categoryCheckboxes = Array.from(document.querySelectorAll('[data-filter-category]'));
+        const colorCheckboxes = Array.from(document.querySelectorAll('[data-filter-color]'));
+        const availabilityCheckboxes = Array.from(document.querySelectorAll('[data-filter-availability]'));
+        const priceMin = document.getElementById('priceMin');
+        const priceMax = document.getElementById('priceMax');
+        const minOutput = document.getElementById('priceMinValue');
+        const maxOutput = document.getElementById('priceMaxValue');
+        const sortSelect = document.getElementById('collectionSort');
+        const grid = document.getElementById('collectionGrid');
+        const countLabel = document.getElementById('collectionCount');
+        const gridBtn = document.getElementById('gridViewBtn');
+        const listBtn = document.getElementById('listViewBtn');
+        const items = Array.from(document.querySelectorAll('.collection-item'));
+
+        const categoryMap = {
+            '14k-58-3': '14K, 58.3%',
+            '18k-75-0': '18K, 75.0%',
+            '22k-91-7': '22K, 91.7%',
+            '24k-99-9': '24K, 99.9%',
+            'bangles': 'Bangles',
+            'best-seller': 'Best seller',
+            'bracelets': 'Bracelets',
+            'brooch': 'Brooch',
+            'chain': 'Chain',
+            'diamond': 'Diamond',
+            'diamonds': 'Diamonds',
+            'earring': 'Earring',
+            'nose-pins': 'Nose pins',
+            'gold': 'Gold',
+            'ring': 'Ring'
+        };
+
+        function updatePriceOutputs() {
+            if (minOutput && maxOutput && priceMin && priceMax) {
+                minOutput.textContent = priceMin.value;
+                maxOutput.textContent = priceMax.value;
+            }
+        }
+
+        function selectedValues(nodes) {
+            return nodes.filter((node) => node.checked).map((node) => node.value);
+        }
+
+        function applyCollectionFilters() {
+            if (!grid) return;
+
+            const activeCategories = selectedValues(categoryCheckboxes);
+            const activeColors = selectedValues(colorCheckboxes);
+            const activeAvailability = selectedValues(availabilityCheckboxes);
+            const min = priceMin ? Number(priceMin.value) : 0;
+            const max = priceMax ? Number(priceMax.value) : 1000;
+
+            items.forEach((item) => {
+                const category = item.dataset.category;
+                const color = item.dataset.color;
+                const stock = item.dataset.stock;
+                const price = Number(item.dataset.price);
+
+                const categoryMatch = activeCategories.length === 0 || activeCategories.includes(category);
+                const colorMatch = activeColors.length === 0 || activeColors.includes(color);
+                const stockMatch = activeAvailability.length === 0 || activeAvailability.includes(stock);
+                const priceMatch = price >= min && price <= max;
+
+                item.classList.toggle('hidden', !(categoryMatch && colorMatch && stockMatch && priceMatch));
+            });
+
+            const visibleCount = items.filter((item) => !item.classList.contains('hidden')).length;
+            if (countLabel) {
+                countLabel.textContent = `${visibleCount} products`;
+            }
+        }
+
+        function sortCollection() {
+            if (!grid || !sortSelect) return;
+
+            const sorted = [...items].sort((a, b) => {
+                const sortBy = sortSelect.value;
+                const priceA = Number(a.dataset.price);
+                const priceB = Number(b.dataset.price);
+                const nameA = a.dataset.name;
+                const nameB = b.dataset.name;
+
+                if (sortBy === 'price-low') return priceA - priceB;
+                if (sortBy === 'price-high') return priceB - priceA;
+                if (sortBy === 'name') return nameA.localeCompare(nameB);
+                return Number(a.dataset.order) - Number(b.dataset.order);
+            });
+
+            sorted.forEach((item) => grid.appendChild(item));
+        }
+
+        function setView(mode) {
+            if (!grid || !gridBtn || !listBtn) return;
+            const isList = mode === 'list';
+            grid.classList.toggle('list-view', isList);
+            gridBtn.classList.toggle('filter-chip-active', !isList);
+            listBtn.classList.toggle('filter-chip-active', isList);
+        }
+
+        if (selectedCategory && categoryMap[selectedCategory]) {
+            titleTargets.forEach((target) => {
+                target.textContent = categoryMap[selectedCategory];
+            });
+            if (crumbTarget) {
+                crumbTarget.textContent = categoryMap[selectedCategory];
+            }
+
+            const matchingCategory = categoryCheckboxes.find((checkbox) => checkbox.value === selectedCategory);
+            if (matchingCategory) {
+                matchingCategory.checked = true;
+            }
+        }
+
+        [...categoryCheckboxes, ...colorCheckboxes, ...availabilityCheckboxes].forEach((input) => {
+            input.addEventListener('change', applyCollectionFilters);
+        });
+
+        if (priceMin && priceMax) {
+            priceMin.addEventListener('input', function () {
+                if (Number(priceMin.value) > Number(priceMax.value)) {
+                    priceMax.value = priceMin.value;
+                }
+                updatePriceOutputs();
+                applyCollectionFilters();
+            });
+
+            priceMax.addEventListener('input', function () {
+                if (Number(priceMax.value) < Number(priceMin.value)) {
+                    priceMin.value = priceMax.value;
+                }
+                updatePriceOutputs();
+                applyCollectionFilters();
+            });
+
+            updatePriceOutputs();
+        }
+
+        if (sortSelect) {
+            sortSelect.addEventListener('change', () => {
+                sortCollection();
+                applyCollectionFilters();
+            });
+        }
+
+        if (gridBtn) gridBtn.addEventListener('click', () => setView('grid'));
+        if (listBtn) listBtn.addEventListener('click', () => setView('list'));
+
+        sortCollection();
+        applyCollectionFilters();
     }
 
 });
@@ -752,6 +930,19 @@ tailwind.config = {
         const stickyVariantPrice = document.getElementById('stickyVariantPrice');
         const stickySelect = document.getElementById('stickyVariantSelect');
         const variantButtons = document.querySelectorAll('.variant-btn');
+        const qtyDecButton = document.querySelector('[data-qty-dec]');
+        const qtyIncButton = document.querySelector('[data-qty-inc]');
+        const stickyDecButton = document.querySelector('[data-sticky-dec]');
+        const stickyIncButton = document.querySelector('[data-sticky-inc]');
+        const buyBtnMain = document.getElementById('buyBtnMain');
+        const stickyAddToCart = document.getElementById('stickyAddToCart');
+        const wishlistBtn = document.getElementById('wishlistBtn');
+
+        if (!qtyInput || !stickyQtyInput || !colorLabel || !priceLabel || !stickyVariantPrice || !stickySelect ||
+            !qtyDecButton || !qtyIncButton || !stickyDecButton || !stickyIncButton || !buyBtnMain ||
+            !stickyAddToCart || !wishlistBtn) {
+            return;
+        }
         let activeVariant = 'orange';
 
         function normalizeQty(value) {
@@ -793,16 +984,16 @@ tailwind.config = {
             };
         }
 
-        document.querySelector('[data-qty-dec]').addEventListener('click', function () {
+        qtyDecButton.addEventListener('click', function () {
             setQty(normalizeQty(qtyInput.value) - 1);
         });
-        document.querySelector('[data-qty-inc]').addEventListener('click', function () {
+        qtyIncButton.addEventListener('click', function () {
             setQty(normalizeQty(qtyInput.value) + 1);
         });
-        document.querySelector('[data-sticky-dec]').addEventListener('click', function () {
+        stickyDecButton.addEventListener('click', function () {
             setQty(normalizeQty(stickyQtyInput.value) - 1);
         });
-        document.querySelector('[data-sticky-inc]').addEventListener('click', function () {
+        stickyIncButton.addEventListener('click', function () {
             setQty(normalizeQty(stickyQtyInput.value) + 1);
         });
 
@@ -823,15 +1014,15 @@ tailwind.config = {
             updateVariant(this.value);
         });
 
-        document.getElementById('buyBtnMain').addEventListener('click', function () {
+        buyBtnMain.addEventListener('click', function () {
             window.addToCart(cartPayload(), normalizeQty(qtyInput.value));
         });
 
-        document.getElementById('stickyAddToCart').addEventListener('click', function () {
+        stickyAddToCart.addEventListener('click', function () {
             window.addToCart(cartPayload(), normalizeQty(stickyQtyInput.value));
         });
 
-        document.getElementById('wishlistBtn').addEventListener('click', function () {
+        wishlistBtn.addEventListener('click', function () {
             window.addToWishlist(cartPayload());
         });
 
