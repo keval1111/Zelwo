@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Tailwind CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Optional Custom CSS -->
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
@@ -13,12 +14,11 @@
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;700&display=swap"
         rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
-    <title>About Us</title>
+    <title>Cart</title>
 </head>
-
 <body>
 
-    <!-- Navbar -->
+        <!-- Navbar -->
     <header class="w-full font-sans bg-white border-b border-gray-100">
         <div class="max-w-7xl mx-auto px-4 sm:px-6">
             <div class="flex items-center justify-between py-4 space-x-4 lg:space-x-8">
@@ -139,6 +139,7 @@
         <div class="hidden md:block border-t border-gray-50">
             <div
                 class="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between uppercase tracking-wide text-[13px] font-semibold text-gray-700">
+
                 <div class="flex items-center space-x-2">
                     <i class="fas fa-headphones text-amber-800"></i>
                     <span class="whitespace-nowrap">(220) 123 456 7890</span>
@@ -228,7 +229,6 @@
                             class="flex items-center hover:text-amber-700 transition-colors font-semibold uppercase tracking-wide text-[13px] border-b-2 border-transparent group-hover:border-amber-700 h-full">
                             Shop <i class="fa-solid fa-chevron-down ml-1.5 text-[10px]"></i>
                         </a>
-
                         <!-- <div
                             class="absolute left-1/2 -translate-x-1/2 top-full hidden group-hover:block w-screen bg-white shadow-2xl border-t border-gray-100 z-50">
                             <div class="max-w-[1400px] mx-auto px-10 py-4">
@@ -320,7 +320,6 @@
                             class="flex items-center hover:text-amber-700 transition-colors font-semibold uppercase tracking-wide text-[13px] border-b-2 border-transparent group-hover:border-amber-700 h-full">
                             Products <i class="fa-solid fa-chevron-down ml-1.5 text-[10px]"></i>
                         </a>
-
                         <!-- <div
                             class="absolute left-1/2 -translate-x-1/2 top-full hidden group-hover:block w-screen bg-white shadow-2xl border-t border-gray-100 z-50">
                             <div class="max-w-[1400px] mx-auto px-10 py-10">
@@ -488,10 +487,9 @@
                     <div class="relative group inline-block">
                         <a href="About us.html"
                             class="flex items-center hover:text-amber-700 transition-colors uppercase tracking-wide text-[13px] font-semibold border-b-2 border-transparent hover:border-amber-700 pb-1">
-                            About us
+                            About Us
                             <i class="fa-solid fa-chevron-down ml-1.5 text-[10px]"></i>
                         </a>
-
                         <!-- <div
                             class="absolute left-0 top-full w-64 bg-white shadow-xl border border-gray-100 py-2 mt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
                             <ul class="flex flex-col">
@@ -538,326 +536,58 @@
         </div>
     </header>
 
-    <div class="py-12 md:py-20 text-center bg-cover bg-center bg-no-repeat"
-        style="background-image: url('img/jewelry-3-breadcrumb.webp');">
-        <h1 class="text-3xl md:text-4xl font-serif text-gray-800 mb-4 animate-fade-in">About Us</h1>
-        <nav class="text-xs uppercase tracking-widest text-gray-400">
-            <a href="index.html" class="text-gray-800">Home</a> /
-            <span class="text-gray-800">About Us</span>
+        <!-- Main Cart Content -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-10 md:px-20 lg:px-24 py-12">
+        <nav class="text-[11px] uppercase tracking-widest text-gray-400 mb-8">
+            Home / <span class="text-gray-800">Shopping Cart</span>
         </nav>
-    </div>
 
-    <style>
-        .about-client-swiper .swiper-button-next,
-        .about-client-swiper .swiper-button-prev {
-            width: 56px;
-            height: 56px;
-            border-radius: 9999px;
-            background: rgba(255, 255, 255, 0.95);
-            color: #7c8796;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
-        }
+        <h1 class="text-3xl font-bold text-gray-900 mb-8">Shopping Cart</h1>
 
-        .about-client-swiper .swiper-button-next::after,
-        .about-client-swiper .swiper-button-prev::after {
-            font-size: 16px;
-            font-weight: 700;
-        }
-    </style>
-
-    <!-- ABOUT SECTION -->
-    <section class="py-16">
-        <div class="max-w-7xl mx-auto text-center">
-
-            <!-- Small Title -->
-            <p class="text-[12px] tracking-[0.2em] text-[#c38b59] uppercase mb-3">
-                SINCE 1982 OUR STORY
-            </p>
-
-            <!-- Main Title -->
-            <h2 class="text-3xl md:text-4xl font-serif mb-12">
-                Our about story
-            </h2>
-
-            <!-- Image -->
-            <div class="overflow-hidden rounded-lg mb-14">
-                <img src="img/about-us-1.webp"
-                    class="w-full h-[300px] md:h-[650px] object-cover transition duration-700 hover:scale-110"
-                    loading="lazy">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+            <!-- Cart Items -->
+            <div class="lg:col-span-2" id="cart-items">
+                <div class="bg-white border border-gray-100 rounded-lg overflow-hidden">
+                    <div class="p-6 text-center">
+                        <i class="fa-solid fa-shopping-bag text-6xl text-gray-200 mb-4"></i>
+                        <p class="text-gray-500 mb-4">Your cart is empty</p>
+                        <a href="index.html"
+                            class="inline-block bg-[#a77f66] hover:bg-[#222222] text-white px-6 py-3 rounded-full text-xs font-bold uppercase tracking-widest transition-all">
+                            Continue Shopping
+                        </a>
+                    </div>
+                </div>
             </div>
-            <!-- Info Section -->
-            <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-12 text-center">
-                <!-- Box 1 -->
-                <div>
-                    <h3 class="text-[15px] md:text-[16px] font-semibold tracking-wide mb-3">
-                        5,000+ HAPPY CUSTOMER
-                    </h3>
-                    <p class="text-gray-600 text-[16px] leading-7">
-                        The customer’s perception is your reality.
-                        Your most unhappy customers are your
-                        greatest source of learning
-                    </p>
-                </div>
-                <!-- Box 2 -->
-                <div>
-                    <h3 class="text-[15px] md:text-[16px] font-semibold tracking-wide mb-3">
-                        40 YEARS OF EXPERIENCES
-                    </h3>
-                    <p class="text-gray-600 text-[16px] leading-7">
-                        Awards can give you a tremendous amount
-                        of encouragement to keep getting better,
-                        no matter how young or old you are.
-                    </p>
-                </div>
-                <!-- Box 3 -->
-                <div>
-                    <h3 class="text-[15px] md:text-[16px] font-semibold tracking-wide mb-3">
-                        40 YEARS OF EXPERIENCES
-                    </h3>
-                    <p class="text-gray-600 text-[16px] leading-7">
-                        Lorem Ipsum is simply dummy text printing
-                        and typesetting
-                    </p>
+
+            <!-- Cart Summary -->
+            <div class="lg:col-span-1">
+                <div class="bg-white border border-gray-100 rounded-lg p-6 sticky top-8">
+                    <h2 class="text-lg font-bold text-gray-900 mb-4">Cart Summary</h2>
+                    <div class="space-y-3 text-sm text-gray-500 border-b border-gray-100 pb-4 mb-4">
+                        <div class="flex justify-between">
+                            <span>Subtotal</span>
+                            <span class="cart-summary-subtotal">Rs. 0.00</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>Shipping</span>
+                            <span>Calculated at checkout</span>
+                        </div>
+                    </div>
+                    <div class="flex justify-between text-base font-bold text-gray-900 mb-6">
+                        <span>Total</span>
+                        <span class="cart-summary-total">Rs. 0.00</span>
+                    </div>
+                    <button
+                        class="cart-checkout-btn w-full bg-[#a77f66] hover:bg-[#222222] text-white py-4 rounded-full font-bold text-xs uppercase tracking-widest transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+                        disabled>
+                        Proceed to Checkout
+                    </button>
                 </div>
             </div>
         </div>
-    </section>
+    </main>
 
-    <section class="pb-16 md:pb-24">
-        <div class="about-client-swiper swiper bg-[#f2eceb] overflow-hidden">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                    <div class="max-w-7xl mx-auto relative px-6 md:px-12 py-16 md:py-20 text-center mt-12">
-                        <img src="img/jewelry-testi-3.avif" alt="Miranda Joy"
-                            class="w-28 h-28 md:w-32 md:h-32 rounded-full object-cover mx-auto border-[10px] border-[#f7f5f3] -mt-28 md:-mt-32">
-                        <p class="mt-8 text-[14px] md:text-[16px] uppercase tracking-[0.08em] text-[#1f2937]">Miranda
-                            Joy</p>
-                        <h3
-                            class="mt-10 max-w-4xl mx-auto text-[22px] md:text-[28px] leading-[1.55] text-[#6b7280] font-medium">
-                            It is a long established fact that a reader will be distracted when looking at its layout.
-                        </h3>
-                        <p
-                            class="mt-10 text-[14px] md:text-[16px] uppercase tracking-[0.08em] font-medium text-[#111827]">
-                            Miranda Joy</p>
-                    </div>
-                </div>
-
-                <div class="swiper-slide">
-                    <div class="max-w-7xl mx-auto relative px-6 md:px-12 py-16 md:py-20 text-center mt-12">
-                        <img src="img/jewelry-testi-2.webp" alt="Crystal Waston"
-                            class="w-28 h-28 md:w-32 md:h-32 rounded-full object-cover mx-auto border-[10px] border-[#f7f5f3] -mt-28 md:-mt-32">
-                        <p class="mt-8 text-[14px] md:text-[16px] uppercase tracking-[0.08em] text-[#1f2937]">Crystal
-                            Waston</p>
-                        <h3
-                            class="mt-10 max-w-4xl mx-auto text-[22px] md:text-[28px] leading-[1.55] text-[#6b7280] font-medium">
-                            Beautiful finishing, thoughtful service, and reliable quality make every collection feel
-                            premium.
-                        </h3>
-                        <p
-                            class="mt-10 text-[14px] md:text-[16px] uppercase tracking-[0.08em] font-medium text-[#111827]">
-                            Crystal Waston</p>
-                    </div>
-                </div>
-
-                <div class="swiper-slide">
-                    <div class="max-w-7xl mx-auto relative px-6 md:px-12 py-16 md:py-20 text-center mt-12">
-                        <img src="img/jewelry-testi-4.webp" alt="Michael Smith"
-                            class="w-28 h-28 md:w-32 md:h-32 rounded-full object-cover mx-auto border-[10px] border-[#f7f5f3] -mt-28 md:-mt-32">
-                        <p class="mt-8 text-[14px] md:text-[16px] uppercase tracking-[0.08em] text-[#1f2937]">Michael
-                            Smith</p>
-                        <h3
-                            class="mt-10 max-w-4xl mx-auto text-[22px] md:text-[28px] leading-[1.55] text-[#6b7280] font-medium">
-                            Handcrafted details and careful stone setting give the pieces a polished and timeless
-                            character.
-                        </h3>
-                        <p
-                            class="mt-10 text-[14px] md:text-[16px] uppercase tracking-[0.08em] font-medium text-[#111827]">
-                            Michael Smith</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="swiper-button-prev left-6 md:left-12"></div>
-            <div class="swiper-button-next right-6 md:right-12"></div>
-        </div>
-    </section>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            if (document.querySelector('.about-client-swiper')) {
-                new Swiper('.about-client-swiper', {
-                    loop: true,
-                    speed: 800,
-                    autoplay: {
-                        delay: 4500,
-                        disableOnInteraction: false
-                    },
-                    navigation: {
-                        nextEl: '.about-client-swiper .swiper-button-next',
-                        prevEl: '.about-client-swiper .swiper-button-prev'
-                    }
-                });
-            }
-        });
-    </script>
-
-    <section>
-        <div class="max-w-7xl mx-auto">
-            <!-- Image -->
-            <div class="overflow-hidden rounded-md mb-16">
-
-                <img src="img/about-us-2.webp" alt="fashion" loading="lazy"
-                    class="w-full h-[280px] md:h-[420px] lg:h-[680px] object-cover transition duration-700 hover:scale-110" />
-            </div>
-
-            <!-- Text Content -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 text-center md:text-left">
-                <!-- Left Content -->
-                <div>
-                    <h3 class="text-lg font-semibold text-gray-800 leading-relaxed mb-4">
-                        Fashion is what you’re offered four times a year by designers fashions fade
-                    </h3>
-
-                    <p class="text-gray-500 leading-relaxed text-sm">
-                        In early 1982, founder and creative director or had the idea to design a bag
-                        collection where comfort, fashion, and distinction are key.
-                    </p>
-                </div>
-                <!-- Right Content -->
-                <div>
-                    <h3 class="text-lg font-semibold text-gray-800 leading-relaxed mb-4">
-                        I prefer to shock rather than to bore through repetition style is eternal
-                    </h3>
-
-                    <p class="text-gray-500 leading-relaxed text-sm">
-                        I have always believed that fashion was not only to make women more beautiful,
-                        but also to reassure them, give them confidence.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="py-20">
-        <div class="max-w-7xl mx-auto px-6 text-center">
-            <!-- Small Title -->
-            <p class="text-sm tracking-widest text-[#c08a5b] uppercase mb-2">
-                HIGHLY SKILLED
-            </p>
-            <!-- Main Title -->
-            <h2 class="text-4xl md:text-5xl font-serif mb-16">
-                Meet our teams
-            </h2>
-            <!-- Team Grid -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
-                <!-- Team Member -->
-                <div class="group">
-                    <div class="overflow-hidden mb-6">
-                        <img src="img/jewelry-team-1.webp"
-                            class="w-full h-[380px] object-cover transition duration-700 group-hover:scale-110">
-                    </div>
-                    <h3 class="text-lg font-semibold tracking-wide">
-                        HARVEY JONES
-                    </h3>
-                    <p class="text-gray-500 text-sm mt-1">
-                        Ceo & founder
-                    </p>
-                </div>
-                <!-- Team Member -->
-                <div class="group">
-
-                    <div class="overflow-hidden mb-6">
-                        <img src="img/jewelry-team-3.webp"
-                            class="w-full h-[380px] object-cover transition duration-700 group-hover:scale-110">
-                    </div>
-                    <h3 class="text-lg font-semibold tracking-wide">
-                        MORY ORLANDO
-                    </h3>
-                    <p class="text-gray-500 text-sm mt-1">
-                        Marketing
-                    </p>
-                </div>
-                <!-- Team Member -->
-                <div class="group">
-                    <div class="overflow-hidden mb-6">
-                        <img src="img/jewelry-team-4.webp"
-                            class="w-full h-[380px] object-cover transition duration-700 group-hover:scale-110">
-                    </div>
-                    <h3 class="text-lg font-semibold tracking-wide">
-                        HARLIE PUTH
-                    </h3>
-                    <p class="text-gray-500 text-sm mt-1">
-                        Designer & model
-                    </p>
-                </div>
-                <!-- Team Member -->
-                <div class="group">
-
-                    <div class="overflow-hidden mb-6">
-                        <img src="img/jewelry-team-2.webp"
-                            class="w-full h-[380px] object-cover transition duration-700 group-hover:scale-110">
-                    </div>
-
-                    <h3 class="text-lg font-semibold tracking-wide">
-                        TRISTIN CHINEZE
-                    </h3>
-
-                    <p class="text-gray-500 text-sm mt-1">
-                        Distribution
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="py-20 border-t border-gray-200">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-16 text-center">
-                <!-- Service 1 -->
-                <div class="group">
-                    <div
-                        class="w-28 h-28 mx-auto flex items-center justify-center rounded-full bg-gray-200 mb-6 transition duration-500 group-hover:scale-110">
-                        <i class="fa-solid fa-truck text-2xl text-[#9b6a43]"></i>
-                    </div>
-                    <h3 class="text-lg font-semibold tracking-wide mb-3">
-                        FAST SHIPPING
-                    </h3>
-                    <p class="text-gray-500 leading-relaxed text-sm">
-                        Free Shipping starts now! No minimums.<br>
-                        No coupon required.
-                    </p>
-                </div>
-                <!-- Service 2 -->
-                <div class="group">
-                    <div
-                        class="w-28 h-28 mx-auto flex items-center justify-center rounded-full bg-gray-200 mb-6 transition duration-500 group-hover:scale-110">
-                        <i class="fa-solid fa-rotate text-2xl text-[#9b6a43]"></i>
-                    </div>
-                    <h3 class="text-lg font-semibold tracking-wide mb-3">
-                        EASY RETURNS
-                    </h3>
-                    <p class="text-gray-500 leading-relaxed text-sm">
-                        Do everything with a good heart and
-                        expect nothing in return
-                    </p>
-                </div>
-                <!-- Service 3 -->
-                <div class="group">
-                    <div
-                        class="w-28 h-28 mx-auto flex items-center justify-center rounded-full bg-gray-200 mb-6 transition duration-500 group-hover:scale-110">
-                        <i class="fa-solid fa-dollar-sign text-2xl text-[#9b6a43]"></i>
-                    </div>
-                    <h3 class="text-lg font-semibold tracking-wide mb-3">
-                        100% MONEY SECURE
-                    </h3>
-                    <p class="text-gray-500 leading-relaxed text-sm">
-                        100% MONEY SECURE
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
+ 
     <footer class="bg-[#FCF8F4] border-t border-gray-100 pt-16 pb-8 font-sans mt-8">
         <div class="container mx-auto px-4 sm:px-10 md:px-20 lg:px-24">
             <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-12 mb-16">
@@ -969,7 +699,9 @@
             </div>
         </div>
     </footer>
-
+    
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="script.js"></script>
+<script src="https://cdn.tailwindcss.com"></script>    
 </body>
-
 </html>

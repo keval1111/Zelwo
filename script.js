@@ -1029,3 +1029,5 @@ tailwind.config = {
         setQty(1);
         updateVariant(activeVariant);
     });
+
+    
