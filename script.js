@@ -83,12 +83,6 @@ document.addEventListener('DOMContentLoaded', function () {
             slidesPerView: 1,
             spaceBetween: 15,
             loop: true,
-            freeMode: true,
-            speed: 8000,
-            autoplay: {
-                delay: 0,
-                disableOnInteraction: false
-            },
             navigation: {
                 nextEl: '.reel-next',
                 prevEl: '.reel-prev',
