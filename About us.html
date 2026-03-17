@@ -687,6 +687,38 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {
+            const menuToggle = document.getElementById('menu-toggle');
+            const closeSidebar = document.getElementById('close-sidebar');
+            const mobileSidebar = document.getElementById('mobile-sidebar');
+            const sidebarOverlay = document.getElementById('sidebar-overlay');
+            const searchToggle = document.getElementById('search-toggle');
+            const mobileSearch = document.getElementById('mobile-search');
+
+            if (menuToggle && closeSidebar && mobileSidebar && sidebarOverlay) {
+                const closeMenu = () => {
+                    mobileSidebar.classList.add('-translate-x-full');
+                    sidebarOverlay.classList.remove('opacity-100');
+                    sidebarOverlay.classList.add('opacity-0', 'pointer-events-none');
+                    document.body.style.overflow = '';
+                };
+
+                menuToggle.addEventListener('click', () => {
+                    mobileSidebar.classList.remove('-translate-x-full');
+                    sidebarOverlay.classList.remove('opacity-0', 'pointer-events-none');
+                    sidebarOverlay.classList.add('opacity-100');
+                    document.body.style.overflow = 'hidden';
+                });
+
+                closeSidebar.addEventListener('click', closeMenu);
+                sidebarOverlay.addEventListener('click', closeMenu);
+            }
+
+            if (searchToggle && mobileSearch) {
+                searchToggle.addEventListener('click', () => {
+                    mobileSearch.classList.toggle('hidden');
+                });
+            }
+
             if (document.querySelector('.about-client-swiper')) {
                 new Swiper('.about-client-swiper', {
                     loop: true,

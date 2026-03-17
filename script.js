@@ -257,6 +257,31 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
+    // Product card quantity controls
+    document.querySelectorAll('div.flex.border.border-gray-200.items-center.text-xs').forEach((control) => {
+        const buttons = control.querySelectorAll('button');
+        const display = control.querySelector('span');
+
+        if (buttons.length !== 2 || !display) {
+            return;
+        }
+
+        const updateDisplay = (nextValue) => {
+            const qty = Math.max(1, parseInt(nextValue, 10) || 1);
+            display.textContent = String(qty);
+        };
+
+        buttons[0].addEventListener('click', (event) => {
+            event.stopPropagation();
+            updateDisplay((parseInt(display.textContent, 10) || 1) - 1);
+        });
+
+        buttons[1].addEventListener('click', (event) => {
+            event.stopPropagation();
+            updateDisplay((parseInt(display.textContent, 10) || 1) + 1);
+        });
+    });
+
     // JELWO Nav Dropdown Functionality (Desktop Hover)
     document.querySelectorAll('.group').forEach(group => {
         const dropdown = group.querySelector('[class*="hidden"][class*="group-hover"]');
